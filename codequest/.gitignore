@@ -1,0 +1,5 @@
+# Credenciais NUNCA vão para o GitHub
+config/env.php
+*.log
+.DS_Store
+.vscode/

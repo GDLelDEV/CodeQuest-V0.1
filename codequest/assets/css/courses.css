@@ -1,0 +1,79 @@
+/* CodeQuest — courses.css (cursos, módulos e aulas) */
+.voltar,.trilha{display:inline-block;margin-bottom:1rem;color:var(--texto2);font-size:.9rem}
+.voltar:hover,.trilha a:hover{color:var(--texto)}
+.trilha{display:block}
+.trilha span{color:var(--texto)}
+
+/* lista de cursos */
+.cursos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.2rem}
+.curso-box{display:flex;flex-direction:column;gap:.6rem}
+.curso-box h2{font-size:1.2rem}
+.curso-box p{flex:1;font-size:.92rem}
+.curso-box-topo{display:flex;justify-content:space-between;align-items:center}
+.curso-box-ico{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:var(--card2);font-size:1.7rem}
+.curso-box-ico.grande{width:72px;height:72px;font-size:2.3rem;flex:none}
+.curso-box-info{display:flex;gap:1rem;font-size:.85rem}
+.curso-box .btn{margin-top:.5rem}
+.col-vazio{grid-column:1/-1}
+
+/* cabeçalho do curso */
+.curso-topo{display:flex;align-items:center;gap:1.4rem;margin-bottom:1.4rem;background:linear-gradient(135deg,rgba(139,92,246,.16),var(--card) 60%)}
+.curso-topo-info{flex:1;min-width:0;display:grid;gap:.5rem}
+.curso-topo-chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.curso-topo h2{font-size:1.5rem}
+
+/* módulos e aulas */
+.modulos{display:grid;gap:1.2rem}
+.modulo{display:grid;gap:.9rem}
+.modulo-bloqueado{opacity:.65}
+.modulo-concluido{border-color:rgba(34,197,94,.45)}
+.modulo-topo{display:flex;align-items:center;gap:.9rem}
+.modulo-num{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--roxo),var(--azul));font-weight:800;flex:none}
+.modulo-tit{flex:1;min-width:0}
+.modulo-tit h3{font-size:1.1rem}
+.modulo-tit p{font-size:.88rem}
+.estado{display:inline-block;padding:.15rem .65rem;border-radius:99px;font-size:.75rem;font-weight:700;white-space:nowrap;border:1px solid}
+.estado-verde{color:#86EFAC;background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.4)}
+.estado-roxo{color:#C4B5FD;background:rgba(139,92,246,.14);border-color:rgba(139,92,246,.45)}
+.estado-azul{color:#93C5FD;background:rgba(59,130,246,.14);border-color:rgba(59,130,246,.45)}
+.estado-cinza{color:var(--texto2);background:var(--card2);border-color:var(--borda)}
+
+.aulas-lista{display:grid;gap:.4rem}
+.aula-item{border-radius:12px;background:var(--card2);border:1px solid transparent;transition:border-color .2s,background .2s}
+.aula-link,.aula-bloqueada{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem}
+.aula-bloqueada{color:var(--texto2)}
+.aula-item:not(.aula-bloqueada):hover{border-color:rgba(139,92,246,.6)}
+.aula-item.aula-concluida{border-color:rgba(34,197,94,.25)}
+.aula-nome{flex:1;min-width:0;font-weight:500}
+.aula-ico{width:24px;text-align:center}
+.aula-bloqueada{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem}
+
+/* página de aula */
+.aula{display:grid;gap:1.2rem;max-width:860px}
+.aula-cab{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.aula-cab h2{flex-basis:100%;font-size:1.7rem;margin-top:.3rem}
+.aula-bloco h3,.aula-resumo h3{font-size:1.05rem;margin-bottom:.7rem}
+.texto-aula p{margin-bottom:.8rem;color:#E2E8F0}
+.texto-aula p:last-child{margin-bottom:0}
+.codigo{background:#0A0F1D;border:1px solid var(--borda);border-radius:14px;overflow:hidden}
+.codigo-topo{display:flex;justify-content:space-between;align-items:center;padding:.5rem .9rem;background:var(--bg2);border-bottom:1px solid var(--borda);font-size:.8rem;color:var(--texto2)}
+.codigo-copiar{background:var(--card2);border:1px solid var(--borda);color:var(--texto);border-radius:8px;padding:.25rem .7rem;font-size:.78rem;cursor:pointer;transition:border-color .2s}
+.codigo-copiar:hover{border-color:var(--roxo)}
+.codigo pre{margin:0;padding:1rem;overflow-x:auto}
+.codigo code{font:.9rem/1.6 ui-monospace,'Cascadia Code',Consolas,monospace;color:#C4B5FD;white-space:pre}
+.aula-resumo{border-left:4px solid var(--amarelo)}
+
+.aula-nav{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between;padding-top:.5rem}
+.form-concluir{margin:0}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+.concluida-selo{display:inline-flex;align-items:center;padding:.7rem 1.2rem;border-radius:12px;font-weight:700;color:#86EFAC;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.45);animation:pop .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+
+@media (max-width:700px){
+  .curso-topo{flex-direction:column;align-items:flex-start}
+  .curso-topo .btn{width:100%}
+  .aula-link,.aula-bloqueada{flex-wrap:wrap}
+  .aula-nav{flex-direction:column;align-items:stretch}
+  .aula-nav .btn,.form-concluir .btn{width:100%}
+  .concluida-selo{justify-content:center}
+}

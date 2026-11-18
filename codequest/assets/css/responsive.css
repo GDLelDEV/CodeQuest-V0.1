@@ -1,0 +1,44 @@
+/* CodeQuest — responsive.css (carregado por último) */
+
+/* Notebook / tablet largo */
+@media (max-width:1100px){
+  .col-8,.col-4{grid-column:span 12}
+  .col-3{grid-column:span 6}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Tablet: sidebar vira menu recolhível */
+@media (max-width:900px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.aberta{transform:none;box-shadow:var(--sombra)}
+  .conteudo{margin-left:0}
+  .menu-btn{display:inline-grid;place-items:center}
+  .col-6{grid-column:span 12}
+
+  .hero{grid-template-columns:1fr;padding-top:2.5rem}
+  .mock{max-width:480px}
+  .nav-links{display:none}
+  .grid-3{grid-template-columns:1fr}
+
+  .auth{grid-template-columns:1fr}
+  .auth-lado{display:none}
+}
+
+/* Celular */
+@media (max-width:600px){
+  .principal{padding:1rem}
+  .topo{padding:.7rem 1rem}
+  .topo-titulo{font-size:1.05rem}
+  .chip-nivel{display:none}
+  .col-3{grid-column:span 6}
+  .stat strong{font-size:1.5rem}
+  .boas-vindas{flex-direction:column;align-items:flex-start;text-align:left}
+  .avatar-g{width:56px;height:56px;font-size:1.2rem}
+  .hero{padding-top:1.5rem}
+  .hero-botoes .btn{width:100%}
+  .hero-numeros{gap:1.2rem}
+  .grid-4{grid-template-columns:1fr}
+  .nav-cta{display:none}
+  .btn-lg{padding:.85rem 1.3rem}
+  .rodape-in{justify-content:center;text-align:center}
+}

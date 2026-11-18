@@ -1,0 +1,63 @@
+/* CodeQuest — dashboard.css (layout logado: sidebar, topo e cards) */
+body.app{display:block}
+.sidebar{position:fixed;inset:0 auto 0 0;width:250px;background:var(--bg2);border-right:1px solid var(--borda);padding:1.2rem .9rem;display:flex;flex-direction:column;gap:1.4rem;z-index:60;transition:transform .3s ease}
+.sidebar .logo{padding:0 .5rem}
+.menu{display:grid;gap:.25rem;flex:1;align-content:start;overflow-y:auto}
+.menu-item{display:flex;align-items:center;gap:.75rem;padding:.7rem .85rem;border-radius:12px;color:var(--texto2);font-weight:500;font-size:.95rem;transition:background .2s,color .2s}
+.menu-item:hover{background:var(--card2);color:var(--texto)}
+.menu-item.ativo{background:linear-gradient(135deg,rgba(139,92,246,.3),rgba(139,92,246,.12));color:#fff;box-shadow:inset 3px 0 0 var(--roxo)}
+.menu-ico{width:22px;text-align:center}
+.sair-form{border-top:1px solid var(--borda);padding-top:.8rem}
+.sair{width:100%;background:none;border:0;cursor:pointer;text-align:left}
+.sair:hover{background:rgba(239,68,68,.12);color:#FCA5A5}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .3s;z-index:55}
+.overlay.visivel{opacity:1;pointer-events:auto}
+
+.conteudo{margin-left:250px;min-height:100vh}
+.topo{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:1rem;padding:.9rem 1.6rem;background:rgba(11,16,32,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--borda)}
+.topo-titulo{font-size:1.25rem}
+.topo-info{margin-left:auto;display:flex;align-items:center;gap:.6rem}
+.menu-btn{display:none;background:var(--card2);border:1px solid var(--borda);color:var(--texto);border-radius:10px;width:40px;height:40px;font-size:1.2rem;cursor:pointer}
+.principal{padding:1.6rem}
+
+/* grade de 12 colunas */
+.grade{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.2rem}
+.col-12{grid-column:span 12}.col-8{grid-column:span 8}.col-6{grid-column:span 6}.col-4{grid-column:span 4}.col-3{grid-column:span 3}
+.card-titulo{font-size:1.05rem;margin-bottom:.8rem}
+
+.boas-vindas{display:flex;gap:1.3rem;align-items:center;background:linear-gradient(135deg,rgba(139,92,246,.18),var(--card) 60%)}
+.bv-texto{flex:1;min-width:0}
+.bv-texto h2{font-size:1.5rem}
+.evolucao{margin-top:1rem}
+.evolucao-topo{display:flex;justify-content:space-between;gap:1rem;margin-bottom:.4rem;font-size:.9rem;flex-wrap:wrap}
+
+.stat{display:flex;flex-direction:column;gap:.15rem}
+.stat strong{font-size:1.9rem;line-height:1.1}
+.stat-ico{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;font-size:1.2rem;margin-bottom:.5rem}
+.stat-ico.amarelo{background:rgba(250,204,21,.13)}.stat-ico.roxo{background:rgba(139,92,246,.16)}
+.stat-ico.azul{background:rgba(59,130,246,.16)}.stat-ico.verde{background:rgba(34,197,94,.14)}
+
+.destaque-aula{font-size:1.25rem;font-weight:700;margin:.2rem 0 1rem}
+.rank-lista{display:grid;gap:.5rem;margin-top:.8rem}
+.rank-item{display:flex;align-items:center;gap:.7rem;padding:.55rem .7rem;border-radius:12px;background:var(--card2);border:1px solid transparent}
+.rank-item.eu{border-color:rgba(139,92,246,.6)}
+.rank-pos{width:28px;text-align:center;font-size:1.15rem}
+.rank-nome{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.cursos-prog{display:grid;gap:1rem}
+.curso-prog{display:flex;align-items:center;gap:.9rem;border-radius:12px;padding:.3rem;transition:background .2s}
+.curso-prog:hover{background:var(--card2)}
+.curso-ico{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--card2);font-size:1.3rem;flex:none}
+.curso-info{flex:1;min-width:0}
+.curso-linha{display:flex;justify-content:space-between;gap:.8rem;margin-bottom:.35rem;font-size:.92rem;flex-wrap:wrap}
+
+.conq-lista{display:grid;gap:.7rem}
+.conq-item{display:flex;gap:.8rem;align-items:center}
+.conq-item small{display:block;line-height:1.3}
+.conq-ico{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:rgba(250,204,21,.13);font-size:1.3rem;flex:none}
+
+.missoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.missao{background:var(--card2);border:1px solid var(--borda);border-radius:14px;padding:1rem;display:grid;gap:.45rem}
+.missao.feita{border-color:rgba(34,197,94,.5)}
+.missao-topo{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.missao p{font-size:.88rem}
